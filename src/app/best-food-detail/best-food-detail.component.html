@@ -1,0 +1,46 @@
+<div class="container-fluid p-0 m-0 header-bg">
+    
+    <nav class="container text-center py-3">
+        <i class="mdi mdi-arrow-left" aria-hidden="true" (click)="backToHome()"></i>
+        <header>Best Food App</header>
+    </nav>
+</div>    
+<main class="container" *ngIf = "fromFavListPage">
+    <div class="row">
+        <div class="col px-0 px-sm-3">
+            <div class="img-container">
+                <img [src]="fromFavListPage.image" alt="{{fromFavListPage.name}}">
+                <div class="d-flex justify-content-between mt-2 px-3 px-sm-0">
+                    <div class="short-desc">
+                        <p>{{fromFavListPage.name}}</p>
+                        <strong>{{fromFavListPage.price}}</strong>
+                    </div>
+                    <button class="btn btn-custom text-uppercase"><span>+</span> 1 <span>-</span> </button>
+                </div>
+            </div> 
+        </div>
+    </div>
+    <div class="row border-top mt-2 pt-3">
+        <div class="col ratings d-flex justify-content-sm-between">
+            <div class="mr-2">
+                <span>Category: {{fromFavListPage.category}}</span>
+            </div>
+         
+            
+                <div class="ml-2">
+                    <i class="mdi mdi-star" aria-hidden="true"></i><span>{{fromFavListPage.rating}}.0 Rating,({{fromFavListPage.reviews}} Reviews)</span>
+                </div>
+       </div>    
+        
+    </div>
+    <div class="row mt-5">
+        <div class="col details">
+            <h5 class="text-uppercase">Details</h5>
+            <p>
+                {{fromFavListPage.details}}
+            </p>
+        </div>
+    </div>
+</main>
+
+

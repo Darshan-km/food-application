@@ -1,0 +1,87 @@
+<div class="container-fluid p-0">
+    <nav>
+        <header>Best Food App</header>
+    </nav>
+</div>
+<main>
+    <div class="container mt-4">
+
+        <section class="favorite">
+            <div class="row">
+                <div class="col">
+                    <div class="favorite-heading">
+                        <div class="favorite-heading-text">
+                            <h6 class="text-uppercase m-0">Favorites</h6>
+                            <small>Enjoy what you have been ordering!</small>
+                        </div>
+                        <i class="mdi mdi-cart-outline" aria-hidden="true"></i>
+                    </div>
+                    <div *ngIf="favListToBind" class="fav-img-wrapper">
+                        <div *ngFor="let list of favListToBind">
+                            <div class="favorite-img">
+                                <img [src]="list.image" alt="{{list.name}}">
+                                <div class="d-flex justify-content-between mt-2">
+                                    <div>
+                                        <p>{{list.category}}</p>
+                                        <strong>{{list.price | currency:'INR'}}</strong>
+                                    </div>
+                                    <button class="btn btn-custom text-uppercase">Reorder</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="categories">
+            <div class="row mt-3">
+                <div class="col-12">
+                    <i class="mdi mdi-magnify" aria-hidden="true"></i>
+                  <input type="text" placeholder="Search for a particular dish or ingredient" [(ngModel)]="term">
+                </div>
+              </div>
+            <div class="row">
+                <div class="col">
+                    <div class="categories-heading">
+                        <h6 class="text-uppercase m-0">Select categories</h6>
+                        <span class="f-text">
+                         Filter   
+                        <i class="mdi mdi-filter-variant-minus" aria-hidden="true" (click)="toggle()"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="categories-filter-wrapper" *ngIf="!isShown">
+            <div class="row">
+                <div class="col">
+                    <div class="categories-filter" *ngIf="favCategoriesList">
+                        <div class="categories-filter-detail" *ngFor="let list of favCategoriesList" (click)= "onClickFilter(list)">
+                        <img [src] = "list.image">
+                        <span>{{list.name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+        <section class="">
+            <div class="row" *ngIf="filterSelectedCategories">
+                <div class="col-sm-4 p-0"  *ngFor="let list of filterSelectedCategories | filter:term" (click)="openSelectedCategoryDetail(list)">
+                    <div class="card m-2">
+                        <img class="card-img-top" [src]="list.image" alt="{{list.name}}">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mt-2">
+                                <div class="short-desc mr-2">
+                                    <p>{{list.name}}</p>
+                                    <strong>{{list.price | currency:'INR'}}</strong>
+                                </div>
+                                <button class="btn btn-custom text-uppercase">Add to Bag</button>
+                            </div>
+                         </div>
+                      </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

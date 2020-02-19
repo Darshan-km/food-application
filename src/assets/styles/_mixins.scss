@@ -1,0 +1,13 @@
+//Responsive font sizes.
+//use px value it will automatically convers to rem ex - "font-size:fontSize(10)";
+@function fontSize($size) {
+    $remSize: ($size) / $base-font-size;
+    @return #{$remSize}rem;
+  }
+  
+  //Global Color function to access use "color:color(primary)"
+  @function color($key) {
+    @if map-has-key($colors, $key) {
+      @return map-get($colors, $key);
+    }
+  }

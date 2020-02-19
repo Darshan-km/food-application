@@ -1,0 +1,78 @@
+@import "_variables";
+@import "_mixins";
+
+.header-bg{
+    background-color: color(primary);
+    
+    .container{
+       i{
+           width: 50px;
+           display: inline-block;
+          &.mdi-arrow-left{
+            font-size: fontSize(20);
+            color: color(white);
+          } 
+       } 
+       header{
+        width: calc(100% - 50px);
+        display: inline-block;
+        font-size: fontSize(20);
+        color: color(white);
+       }
+    }
+}
+
+.img-container{
+   
+    img{
+        max-width: 100%;
+        display: block;
+        height: auto;
+        margin: auto;
+    }
+    .short-desc{
+        width: calc(100% - 100px);
+        display: inline-block;
+
+        p{
+            font-size: fontSize(16);
+            font-weight: 500;
+            margin-bottom: px;
+            padding-right: 5px;
+        }
+        strong{
+            font-size: fontSize(24);
+            font-weight: 500;
+        }
+    }
+    .btn-custom{
+        width: 100px;
+        height: 35px;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: color(primary);
+        color: color(white);
+        font-size: fontSize(19);
+    }
+}
+
+.mdi-star{
+    color: color(yellow);
+    margin-right: 5px;
+}
+
+.ratings{
+    span{
+        color: color(tertiary);
+        font-size: fontSize(20);
+    }
+}
+
+.details{
+    p{
+        color: color(tertiary);
+        font-size: fontSize(20);
+    }
+}

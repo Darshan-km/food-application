@@ -1,0 +1,192 @@
+@import "_variables";
+@import "_mixins";
+nav {
+  background-color: color(primary);
+  line-height: 50px;
+  header {
+    font-size: fontSize(16);
+    font-weight: 500;
+    color: color(white);
+    text-align: center;
+    vertical-align: middle;
+  }
+}
+.favorite{
+    border-bottom: 1.2px solid color(tertiary);
+    .favorite-heading{ 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .favorite-heading-text{
+            h6{
+                font-size: fontSize(16);
+                color: color(secondary);
+            }
+            small{
+                font-size: fontSize(13);
+                color: color(tertiary);
+            }
+        }
+        i{
+            &.mdi{
+                &:before {
+                    font-size: 29px;
+                }
+            } 
+        }
+    }
+}
+.fav-img-wrapper{
+    min-width: 100%;
+    min-height: 200px;
+    display: flex; 
+    overflow-x: auto;
+}
+.fav-img-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+.favorite-img{
+    min-width: 280px;
+    margin: 10px;
+    img{
+        max-width: 100%;
+        display: block;
+        height: auto;
+    }
+
+    .btn-custom{
+        height: 20px;
+        background-color: color(primary);
+        color: color(white);
+        font-size: fontSize(11);
+        height: 20px;
+        padding: 12px;
+        line-height: 0px;
+    }
+    p{
+        font-size: fontSize(14);
+        margin-bottom: 0px;
+        margin-right: 5px;
+    }
+}
+
+.categories{
+    input{
+        width: 100%;
+        background: none;
+        border-bottom: 1.2px solid color(tertiary);
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        padding: 0 0 10px 30px;
+        color: color(secondary);
+        position: relative;
+        padding-top: 10px;
+        &::placeholder{
+            font-size: fontSize(12);
+        }
+    }
+    i{
+        &.mdi-magnify{
+            position: absolute;
+             top: 10px;
+            &:before{
+                font-size: fontSize(20);
+                color:color(tertiary);
+            }
+        }
+    }
+}
+
+.categories{
+    .categories-heading{ 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+            h6{
+                font-size: fontSize(16);
+                color: color(secondary);
+            }
+            .f-text{
+                font-size: fontSize(13);
+                color:color(tertiary);
+                display: flex;
+                align-items: center;
+            }
+            i{
+                &.mdi{
+                    &:before {
+                        font-size: 29px;
+                        color: color(primary);
+                    }
+                } 
+            }
+    }
+}
+
+.categories-filter::-webkit-scrollbar {
+    display: none;
+  }
+    .categories-filter{
+    min-width: 100%;
+    min-height: 50px;
+    display: flex; 
+    overflow-x: auto;
+    .categories-filter-detail{
+        width: 120px;
+        height: 50px;
+        box-shadow: 1px -1px 5px 1px #d8d8d8;
+        margin: 10px;
+        display: flex;
+        padding: 0 10px;
+        justify-content:space-between;
+        align-items: center;
+        img{
+            width: 20px;
+            height: auto;
+            margin: 7px;
+        }
+        span{
+            font-size: fontSize(14);
+            line-height: 1;
+        }
+    }
+}
+
+.card{
+    min-height: 437px;
+    .card-body{
+        padding: 10px;
+ 
+    .short-desc{
+        width: calc(100% - 100px);
+        display: inline-block;
+        p{
+            font-size: fontSize(14);
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+        strong{
+            font-size: fontSize(18);
+            font-weight: 500;
+        }
+    }
+    .btn-custom{
+        width: 100px;
+        height: 20px;
+        background-color: color(primary);
+        color: color(white);
+        font-size: fontSize(11);
+        height: 20px;
+        padding: 12px;
+        line-height: 0px;
+    }
+}
+}
+
+
+@media (max-width:1024px){
+    .card{
+        min-height: 300px;
+    }
+}
